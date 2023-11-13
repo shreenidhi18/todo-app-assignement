@@ -103,6 +103,12 @@ struct ContentView: View {
                         .onDelete(perform: { indexSet in
                             tasks.remove(atOffsets: indexSet)
                             completion.remove(atOffsets: indexSet)
+                            do {
+                                tasksData = try PropertyListEncoder().encode(tasks)
+                                completionData = try PropertyListEncoder().encode(completion)
+                            }catch {
+                                print("Error encoding while adding new task")
+                            }
                         })
                     }
                 }

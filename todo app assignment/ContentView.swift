@@ -91,7 +91,7 @@ struct ContentView: View {
 
                                     }label: {
                                         Image(systemName:"chevron.right")
-                                            .foregroundStyle(.black)
+                                            .foregroundStyle(nightMode ? .white : .black)
                                     }
                                 }
                                 .font(.system(size: 20))
